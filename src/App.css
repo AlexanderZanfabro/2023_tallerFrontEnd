@@ -1,0 +1,313 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ----- MI CSS ---- */
+ *{
+   
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+} 
+
+
+
+:root {
+  
+
+  font-size: 20px;
+
+} 
+
+
+
+
+
+.flex{
+
+  display: flex;
+}
+
+
+body{
+  background-color:rgba(253, 253, 253, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.centrado {
+  width: 30%;
+  /* max-width: 1440px; */
+  margin: 0 auto;
+
+}
+
+.login{
+
+
+flex-direction: column;
+background-color: rgba(18, 222, 154, 0.3);
+font-size: 1rem;
+text-align: center;
+border-radius: 10px;
+margin-top: 1rem;
+}
+
+.login div >form >input{
+  background-color: rgba(127, 255, 212, 0.5);
+  text-decoration: none;
+  color: rgb(20, 18, 18);
+  background-color:rgba(65, 210, 162, 0.5);
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 50px;
+  width: 95%;
+  margin-top: 0.5rem;
+}
+
+
+.login div >form >input[type="button"]{
+  background-color: rgba(127, 255, 212, 0.5);
+
+ 
+  text-decoration: none;
+  color:red;
+  background-color: rgba(236, 119, 119, 0.5);
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 50px;
+  width: 95%;
+  margin-top: 0.5rem;
+}
+
+
+
+.login div >form >input[type="button"]:hover{
+  background-color: rgb(249, 7, 7);
+  color:rgb(2, 2, 2);
+ 
+}
+
+::placeholder{
+  color:rgba(19, 99, 72, 0.5);
+
+}
+
+
+.login div form + div{
+  padding-right: .5rem;
+  margin-top: .3rem;
+}
+
+
+
+
+section > p > a{
+
+display: block;
+text-decoration: none;
+color: rgba(32, 136, 101, 0.838);
+background-color:rgba(65, 210, 162, 0.5);
+padding: 5px 10px;
+text-align: center;
+border-radius: 50px;
+width: 3rem;
+font-size: .7rem;
+}
+
+
+
+
+#link{
+
+  display: block;
+  text-decoration: none;
+  color: rgba(32, 136, 101, 0.838);
+  background-color:rgba(65, 210, 162, 0.233);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 50px;
+  width: 3rem;
+  font-size: .7rem;
+  margin-top: 1rem;
+  }
+
+.login div div p a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+
+.login div div  {
+ display: flex ;
+ flex-wrap: nowrap;
+ justify-content: flex-end;
+ font-size: .7rem;
+}
+
+
+.login div+p{
+margin-top: 1rem;
+padding-left: .5rem;
+} 
+
+
+
+
+/* SECTIONS */
+
+section{
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+/* REGISTRO */
+fieldset{
+  flex-wrap:wrap;
+  flex-direction: column;
+  text-align: center;
+}
+
+.registrar {
+
+background-color: rgba(18, 222, 154, 0.3);
+font-size: 1rem;
+border-radius: 10px;
+margin-top: 1rem;
+flex-direction: column;
+
+}
+
+
+fieldset input{
+  background-color: rgba(127, 255, 212, 0.5);
+  text-decoration: none;
+  color: rgb(20, 18, 18);
+  background-color:rgba(65, 210, 162, 0.5);
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 50px;
+  width: 95%;
+  margin-top: 0.5rem;
+
+
+}
+
+
+
+fieldset  input[type="button"]{
+ 
+      background-color: rgba(127, 255, 212, 0.5);
+      text-decoration: none;
+      color:red;
+      background-color: rgba(236, 119, 119, 0.5);
+      padding: 5px 15px;
+      text-align: center;
+      border-radius: 50px;
+      width: 95%;
+      margin-top: 0.5rem;
+
+
+}
+
+
+
+fieldset input[type="button"]:hover{
+  background-color: rgb(249, 7, 7);
+  color:rgb(2, 2, 2);
+ 
+}
+
+
+
+.registrar div+p{
+  margin-top: 1rem;
+  padding-left: .5rem;
+  } 
+
+.registrar div{
+  text-align: center;
+
+}
+
+
+
+
+/* ********************************** */
+
+
+
+
+.dashboard{
+
+  flex-direction: column;
+  background-color: rgba(18, 222, 154, 0.3);
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 1rem;
+
+
+}
+
+
+.dashboard div article{
+display: flex;
+background-color: aqua;
+height: 5rem;
+margin: .3rem;
+text-align: center;
+justify-content: center;
+align-items: center;
+} 
+
+
+
+.mensaje-error{
+
+color:red;
+
+
+
+}
+
