@@ -125,7 +125,8 @@ return (
         </form>
         <div>
           <p>¿No tienes cuenta? </p>
-          <p><a href="Registro">Registrate</a></p>
+         {/* cambio el ancla por link par que no refresque la pagina */}
+          <p> <Link to="/Registro" id='link'>Registrate</Link></p>
         </div>
       </div>
         {/* {error && <p> ERROR DE USUARIO O PASSWORD</p>} */}
