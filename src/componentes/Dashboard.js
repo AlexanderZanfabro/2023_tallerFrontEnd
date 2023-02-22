@@ -4,21 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const Dashboard = () => {
-
-
- let navigate = useNavigate(); 
-
- console.log('dddddd')
-
+let navigate = useNavigate(); 
+//Se cambia history por navigate  para que el useEfect se ejecute la primera vez que se ejecuta el componente y
+//cada vez que cambie navigate
    useEffect(() => {
     if (localStorage.getItem('id') === null) { 
-      
-      navigate("./");
-      console.log('kkkkkk')
+      navigate("/");
     }
 
-    console.log('afuera')
-  },[]);
+  },[navigate]);
  
 
 
