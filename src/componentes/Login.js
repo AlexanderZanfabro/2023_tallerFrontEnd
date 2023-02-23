@@ -14,9 +14,14 @@ const Login = () => {
 
   const [error, setError] = useState(false);
   const [isLogin, setIsLogin] = useState(false)
-  const[mensajeError, setMensajeError] = useState('');
+  const[mensajeError, setMensajeError] = useState(false);
 
 
+
+
+    useEffect( () => {
+      
+    })
  /*  useEffect(() => {
     if (localStorage.getItem("usuario") !== '') {
       navigate("Dashboard");
@@ -62,6 +67,7 @@ const Login = () => {
         datosRetorno.codigo === 200 && localStorage.setItem('userId', datosRetorno.id);
         datosRetorno.codigo === 200 && navigate("Dashboard");
         datosRetorno.codigo !== 200 && setError(true);
+        datosRetorno.codigo !== 200 && setMensajeError(true);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -129,8 +135,8 @@ return (
           <p> <Link to="/Registro" id='link'>Registrate</Link></p>
         </div>
       </div>
-        {/* {error && <p> ERROR DE USUARIO O PASSWORD</p>} */}
-        <p className='mensaje-error'>{mensajeError}</p>
+        {error && <p> ERROR DE USUARIO O PASSWORD</p>}
+        { mensajeError && <p /* className='mensaje-error' */>{mensajeError}</p>}
       {/*  <Link to="/">Volver</Link> */}
     </section>
 

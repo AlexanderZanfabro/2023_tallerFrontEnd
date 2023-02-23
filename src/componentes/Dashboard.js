@@ -8,7 +8,7 @@ let navigate = useNavigate();
 //Se cambia history por navigate  para que el useEfect se ejecute la primera vez que se ejecuta el componente y
 //cada vez que cambie navigate
    useEffect(() => {
-    if (localStorage.getItem('id') === '') { 
+    if (localStorage.getItem('id') === '' || localStorage.getItem('userid') === '') { 
       navigate("/");
       console.log("entre")
     }
