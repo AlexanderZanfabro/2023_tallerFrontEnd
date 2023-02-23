@@ -10,9 +10,10 @@ body{
     overflow-x: hidden;
 }
 nav{
-    height: 6rem;
+    height: 3rem;
     width: 100vw;
     background-color: #131418;
+    background-color: rgba(18, 222, 154, 0.3);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     /* position: fixed; */
@@ -25,8 +26,8 @@ nav{
     text-align: center;
 }
 .logo img {
-    height: 5rem;
-    width: 5rem;
+    height: 2rem;
+    width: rem;
 }
 
 /*Styling Links*/
@@ -38,6 +39,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
+   
 }
 .nav-links li a{
     text-decoration: none;
@@ -65,34 +67,45 @@ nav{
 
 /*Styling Buttons*/
 .login-button{
+    color: black;
     background-color: transparent;
+    background-color:rgba(65, 210, 162, 0.5);
     border: 1.5px solid #f2f5f7;
+    border: 1.5px solid rgba(65, 210, 162, 0.5);
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
     font-size: 1rem;
+    font-size: .7rem;
     cursor: pointer;
 
 }
 .login-button:hover {
     color: #131418;
     background-color: #f2f5f7;
+    background-color: transparent;
     border:1.5px solid #f2f5f7;
+    border:1.5px solid #000000;
     transition: all ease-in-out 350ms;
 }
 .join-button{
     color: #131418;
-    background-color: #61DAFB;
+   /*  background-color: #61DAFB;
+    border: 1.5px solid #61DAFB; */
+    background-color: rgba(65, 210, 162, 0.5);
     border: 1.5px solid #61DAFB;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
+    font-size: .7rem;
     cursor: pointer;
 }
 .join-button:hover {
     color: #f2f5f7;
+    color: #000000;
     background-color: transparent;
     border:1.5px solid #f2f5f7;
+    border:1.5px solid #020202;
     transition: all ease-in-out 350ms;
 }
 

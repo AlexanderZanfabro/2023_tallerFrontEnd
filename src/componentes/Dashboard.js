@@ -52,7 +52,7 @@ let navigate = useNavigate();
       </div>
 
 
-      <Link to="/">Volver</Link>
+     <p><Link to="/">Volver</Link></p> 
     </section>
 
   )

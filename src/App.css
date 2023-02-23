@@ -169,7 +169,7 @@ font-size: .7rem;
   margin-top: 1rem;
   }
 
-.login div div p a {
+.login div div p link {
   text-decoration: none;
   text-align: center;
   color: black;
@@ -310,4 +310,11 @@ color:red;
 
 
 }
+
+.dashboard section link{
+
+  background-color: black;
+}
+
+
 
