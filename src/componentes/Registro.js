@@ -88,7 +88,7 @@ const registrar = e => {
       console.log('Success:', datosRetorno);
       datosRetorno.codigo === 200 && localStorage.setItem('apiKey', datosRetorno.apiKey);
       datosRetorno.codigo === 200 && localStorage.setItem('userId', datosRetorno.id);
-      datosRetorno.codigo === 200 && navigate("Dashboard");
+      datosRetorno.codigo === 200 && navigate("../Dashboard");
       datosRetorno.codigo !== 200 && setError(true);
       datosRetorno.codigo === 200 && setIsregistro(true)
     })
