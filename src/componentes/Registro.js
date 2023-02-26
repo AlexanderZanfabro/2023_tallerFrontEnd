@@ -80,13 +80,13 @@ const Registro = () => {
   }
   //#endregion
 
-
-const handleFirstSelectChange = () => {
+/* 
+const handleFirstSelectChange = () => { */
 
   /* creo que para usar useSelector tengo que vincular con el store de redux
     para usar useDispatch
   */
-}
+/* } */
 
 
 
@@ -181,7 +181,7 @@ const handleFirstSelectChange = () => {
                   onChange={(e) => {
                     const idDepartamentoSeleccionado = e.target.value
                     setidDepartamentos(idDepartamentoSeleccionado);
-                     handleFirstSelectChange
+                    /*  handleFirstSelectChange */
                   }}
                 >
                   <option key={0} value={0}>
@@ -204,7 +204,7 @@ const handleFirstSelectChange = () => {
 
               {/* select de ciudades */}
               {ciudades !== '' ? (
-                <select value={firstSelectValue}
+                <select /* value={firstSelectValue} */
                   name="slc-ciudades"
                   className="slc-city"
                   onChange={(e) => {
@@ -224,7 +224,7 @@ const handleFirstSelectChange = () => {
                   ))}
                 </select>
               ) : (
-                <select value={secondSelectValue} name="slc-ciudades" className="slc-city">
+                <select /* value={secondSelectValue} */ name="slc-ciudades" className="slc-city">
                   <option key={-1} value={0}>
                     {'No hay ciudad'}
                   </option>
