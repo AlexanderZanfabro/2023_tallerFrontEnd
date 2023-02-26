@@ -1,6 +1,7 @@
 
 import React, { useRef, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import AgregarGastos from './AgregarGastos';
 
 
 const Dashboard = () => {
@@ -27,7 +28,7 @@ let navigate = useNavigate();
           ARCH
         </h1>
         <article>
-          <p>agregar gasto</p>
+          <AgregarGastos/>
         </article>
         <article>
           <p>agregar ingreso</p>
