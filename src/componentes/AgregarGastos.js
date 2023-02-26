@@ -16,8 +16,11 @@ const AgregarGastos = () => {
   const [medioDePago, setMedioDePago] = useState();
   /* otros */
   let idUsuarioLocalStorage = localStorage.getItem("userId");
-
-
+  /* la funcion filter daba error -> decia que no era una funcion ??? */
+ /*  const rubrosFiltrados = rubros.filter(valor => valor.id < 7); */
+ /*  const algo = rubros.filter(function(r){
+    return r.id < 7;
+  }) */
 
 
   /* useEffect */
@@ -59,7 +62,7 @@ const AgregarGastos = () => {
       medio: medioDePago,
       fecha: datoFecha,
     }
-   /*  const data3 = {idUsuarioLocalStorage,descripcionGasto,idRubro,80,fecha} */
+    /*  const data3 = {idUsuarioLocalStorage,descripcionGasto,idRubro,80,fecha} */
 
     fetch('https://dwallet.develotion.com/movimientos.php', {
       method: 'POST',
@@ -80,20 +83,21 @@ const AgregarGastos = () => {
       })
   }
 
-
+ 
+  
 
   /* return del componente */
 
   return (
     <div>
 
-
+<h1>Agregar gastos</h1>
       <section className="registrar flex centrado">
         <div>
-
+         
           <form action="">
             <fieldset className="flex">
-
+                
               <input type="text" placeholder="Descripción del gasto" ref={descripcionGasto} />
               <input type="number" placeholder="Ingresar gasto" ref={totalGasto} />
               <input type="texto" placeholder="Ingresar fecha como texto (YYY-MM-dd)" ref={datoFecha} />
@@ -140,7 +144,8 @@ const AgregarGastos = () => {
                     Seleccione un rubro
                   </option>
 
-                  {rubros && rubros.filter(item2 => item2.id < 7).map((item, index) => (
+               
+                  { rubros && rubros.filter(r => r.id < 7).map((item, index) => (
 
                    
                     <option key={item.id} value={item.id}>

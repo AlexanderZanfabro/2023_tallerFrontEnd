@@ -119,7 +119,7 @@ return (
   <>
     <section className="login flex centrado">
       <div>
-        <h1>
+        <h1 className='tituloApp'>
           ARCH
         </h1>
         <form action="">

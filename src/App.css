@@ -73,11 +73,22 @@ body{
 }
 
 .centrado {
-  width: 30%;
+  width: 70%;
   /* max-width: 1440px; */
   margin: 0 auto;
 
 }
+
+
+h1{
+  color:rgba(0, 0, 0, 0.664);
+
+}
+
+.tituloApp{
+  color:rgba(3, 3, 3, 0.932);
+}
+
 
 .login{
 

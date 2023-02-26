@@ -165,7 +165,7 @@ const handleFirstSelectChange = () => { */
 
       <section className="registrar flex centrado">
         <div>
-          <h1>
+          <h1 claseName='tituloApp'>
             ARCH
           </h1>
           <form action="">

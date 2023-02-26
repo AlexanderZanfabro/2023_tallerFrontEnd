@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import AgregarGastos from './AgregarGastos';
+import AgregarIngreso from './AgregarIngreso';
 
 
 const Dashboard = () => {
@@ -24,13 +25,16 @@ let navigate = useNavigate();
     <section className="dashboard flex centrado">
 
       <div>
-        <h1>
+        <h1 className='tituloApp'>
           ARCH
         </h1>
-        <article>
+        <div>
           <AgregarGastos/>
-        </article>
-        <article>
+        </div>
+        <div>
+          <AgregarIngreso/>
+        </div>
+      {/*   <article>
           <p>agregar ingreso</p>
         </article>
         <article>
@@ -47,7 +51,7 @@ let navigate = useNavigate();
         </article>
         <article>
           <div>grafica</div>
-        </article>
+        </article> */}
 
 
       </div>
