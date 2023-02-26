@@ -3,7 +3,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import AgregarGastos from './AgregarGastos';
 import AgregarIngreso from './AgregarIngreso';
-
+import ListadoDeMovimientos from './ListadoDeMovimientos';
+import MontosTotales from './MontosTotales';
 
 const Dashboard = () => {
 let navigate = useNavigate(); 
@@ -34,24 +35,12 @@ let navigate = useNavigate();
         <div>
           <AgregarIngreso/>
         </div>
-      {/*   <article>
-          <p>agregar ingreso</p>
-        </article>
-        <article>
-          <p>listado de movimientos</p>
-        </article>
-        <article>
-          <p>Montos totales</p>
-        </article>
-        <article>
-          <div>grafica</div>
-        </article>
-        <article>
-          <div>grafica</div>
-        </article>
-        <article>
-          <div>grafica</div>
-        </article> */}
+        <div>
+          <ListadoDeMovimientos/>
+        </div>
+        <div>
+          <MontosTotales/>
+        </div>
 
 
       </div>
