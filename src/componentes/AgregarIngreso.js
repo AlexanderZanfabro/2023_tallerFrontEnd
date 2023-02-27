@@ -17,7 +17,7 @@ const AgregarIngreso = () => {
     const [medioDePago, setMedioDePago] = useState();
     /* otros */
     let idUsuarioLocalStorage = localStorage.getItem("userId");
-    
+
     /* la funcion filter daba error -> decia que no era una funcion ??? */
     /*  const rubrosFiltrados = rubros.filter(valor => valor.id < 7); */
     /*  const algo = rubros.filter(function(r){
@@ -100,8 +100,8 @@ const AgregarIngreso = () => {
                     <form action="">
                         <fieldset className="flex">
 
-                            <input type="text" placeholder="Descripción del gasto" ref={descripcionIngreso} />
-                            <input type="number" placeholder="Ingresar gasto" ref={totalIngreso} />
+                            <input type="text" placeholder="Descripción del ingreso" ref={descripcionIngreso} />
+                            <input type="number" placeholder="Monto a ingresar" ref={totalIngreso} />
                             <input type="texto" placeholder="Ingresar fecha como texto (YYY-MM-dd)" ref={datoFecha} />
 
                             {/* select de rubros */}

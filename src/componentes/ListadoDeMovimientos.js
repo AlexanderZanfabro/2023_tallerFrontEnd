@@ -6,10 +6,12 @@ const ListadoDeMovimientos = () => {
 
     /* useEstate */
     const [movimientos, setMovimientos] = useState(null);
+    /*  console.log('los mov que',movimientos); */
 
     /* useEffect */
     useEffect(() => {
         listarLosMovimientos();
+
     }, [])
 
 
@@ -29,10 +31,6 @@ const ListadoDeMovimientos = () => {
 
             });
 
-
-
-
-
     }
 
 
@@ -44,11 +42,29 @@ const ListadoDeMovimientos = () => {
             <h1>Movimientos</h1>
             <section className="registrar flex centrado">
                 <div>
+
+                    <p>hola mundo</p>
+
+
+                    {/*  {movimientos  && movimientos.map((item) => (
+                        <p key={item.id}>{item.concepto}</p>
+                     ))} */}
+
                     <ol>
-                       {/*  {movimientos !=='' && movimientos.map((item, index) => (
-                            <li id='' key={item.id}>{item.conepto}</li>))}
- */}
+                      {/*   {movimientos ? (
+
+                            movimientos.map((item, index) => (
+                                <li id='li' key={item.id}>{item.conepto}</li>)
+
+
+
+
+                            )
+                         ):(
+                        <li id='li' >no hay movimiento</li>
+                            )} */}
                     </ol>
+
                     {/*   <table className="tablaMovimientos">
                         <thead>
                             <tr>
@@ -62,7 +78,7 @@ const ListadoDeMovimientos = () => {
                             </tr>
                         </thead>
 
-                        {movimientos !== '' ? (
+                        {movimientos ? (
 
                             movimientos.map((item) => (
 
@@ -79,8 +95,8 @@ const ListadoDeMovimientos = () => {
                         ) : (
                             <thead><tr><td>no hay movimientos</td></tr></thead>
                         )}
-                    </table>
- */}
+                    </table> */}
+
                 </div>
             </section>
         </div>

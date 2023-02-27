@@ -7,7 +7,7 @@ const MontosTotales = () => {
     <h1>Montos Totales</h1>
     <section className="registrar flex centrado">
         <div>
-
+       <p>hola mundo 2</p>
         </div>
     </section>
 </div>
