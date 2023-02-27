@@ -1,18 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import Movimiento from './Movimiento';
 
 
 const ListadoDeMovimientos = () => {
 
     /* useEstate */
-    const [movimientos, setMovimientos] = useState(null);
+    const [movimientos, setMovimientos] = useState([]);
     /*  console.log('los mov que',movimientos); */
+
 
     /* useEffect */
     useEffect(() => {
         listarLosMovimientos();
 
     }, [])
+
 
 
     const listarLosMovimientos = e => {
@@ -26,8 +29,8 @@ const ListadoDeMovimientos = () => {
         })
             .then(r => r.json())
             .then(datosMovimientos => {
-                console.log(datosMovimientos);
-                setMovimientos(datosMovimientos);
+                console.log(datosMovimientos.movimientos);
+                setMovimientos(datosMovimientos.movimientos);
 
             });
 
@@ -43,7 +46,7 @@ const ListadoDeMovimientos = () => {
             <section className="registrar flex centrado">
                 <div>
 
-                    <p>hola mundo</p>
+                   <Movimiento movimientos={movimientos}/>
 
 
                     {/*  {movimientos  && movimientos.map((item) => (
@@ -65,7 +68,7 @@ const ListadoDeMovimientos = () => {
                             )} */}
                     </ol>
 
-                    {/*   <table className="tablaMovimientos">
+                  {/*   <table className="tablaMovimientos">
                         <thead>
                             <tr>
 
@@ -80,7 +83,7 @@ const ListadoDeMovimientos = () => {
 
                         {movimientos ? (
 
-                            movimientos.map((item) => (
+                            movimientos?.map((item) => (
 
                                 <tbody key={item.id}>
                                     <tr>

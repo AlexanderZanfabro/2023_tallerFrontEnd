@@ -73,7 +73,7 @@ body{
 }
 
 .centrado {
-  width: 70%;
+  width: 80%;
   /* max-width: 1440px; */
   margin: 0 auto;
 
@@ -139,7 +139,7 @@ margin-top: 1rem;
 }
 
 ::placeholder{
-  color:rgba(19, 99, 72, 0.5);
+  color:rgba(19, 102, 74, 0.952);
 
 }
 
@@ -252,6 +252,7 @@ fieldset select{
   text-decoration: none;
   color: rgb(20, 18, 18);
   color:rgba(19, 99, 72, 0.5);
+  color:rgba(19, 102, 74, 0.952);
   background-color:rgba(65, 210, 162, 0.5);
   padding: 5px 15px;
   text-align: center;
@@ -334,8 +335,6 @@ align-items: center;
 
 color:red;
 
-
-
 }
 
 .dashboard section link{
@@ -359,3 +358,32 @@ article {
 
 /* ------------------- */
 
+/* 
+table, th, td{
+  font-size: .3rem;
+} */
+
+/* 
+
+input[type='checkbox']{
+ background-color: rgba(127, 255, 212, 0.5);
+  text-decoration: none;
+  color: rgb(20, 18, 18);
+  background-color:rgba(65, 210, 162, 0.5);
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 50px;
+  width: 95%;
+  margin-top: 0.5rem;
+} */
+
+
+.cajaDeMov{
+display: flex;
+text-align: left;
+color: rgba(19, 102, 74, 0.952);
+background-color:rgba(65, 210, 162, 0.5);
+margin-top: .5rem;
+padding: .5rem .3rem;
+border-radius: 20px;
+}
