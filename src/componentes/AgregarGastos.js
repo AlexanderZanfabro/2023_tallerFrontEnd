@@ -14,8 +14,10 @@ const AgregarGastos = () => {
   const [idRubro, setIdRubro] = useState("");
   const [rubros, setRubros] = useState("");
   const [medioDePago, setMedioDePago] = useState();
+  
   /* otros */
-  let idUsuarioLocalStorage = localStorage.getItem("userId");
+  let idUsuarioLocalStorage = localStorage.getItem("userId");  /* QUE PASA CON EL LOCALSTORAGE ? AL CREAR EL OBJETO DATA PARA HACER INGRESOS */
+
   /* la funcion filter daba error -> decia que no era una funcion ??? */
  /*  const rubrosFiltrados = rubros.filter(valor => valor.id < 7); */
  /*  const algo = rubros.filter(function(r){
@@ -32,6 +34,7 @@ const AgregarGastos = () => {
 
   /* fetch para obtener rubros */
   const obtenerRubros = () => {
+  
     fetch("https://dwallet.develotion.com/rubros.php", {
       method: 'GET',
       headers: {
@@ -53,7 +56,7 @@ const AgregarGastos = () => {
 
 
   const ingresarGasto = e => {
-
+   
     const data = {
       idUsuario: idUsuarioLocalStorage,
       concepto: descripcionGasto,
@@ -103,33 +106,7 @@ const AgregarGastos = () => {
               <input type="texto" placeholder="Ingresar fecha como texto (YYY-MM-dd)" ref={datoFecha} />
 
               {/* select de rubros */}
-              {/* {rubros !== '' ? (
-                <select
-                  name="slc-rubros"
-                  className="slc-rubros"
-                  onChange={(e) => {
-                    const RubroSeleccionado = e.target.value
-                    setRubros(RubroSeleccionado);
-
-                  }}
-                >
-                  <option key={0} value={0}>
-                    Seleccione un rubro
-                  </option>
-
-                  {rubros && rubros.map((item, index) => (
-                    <option key={item.id} value={item.id}>
-                      {item.nombre}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <select name="slc-rubros" className="slc-rubros">
-                  <option key={-1} value={0}>
-                    {'No hay rubros'}
-                  </option>
-                </select>
-              )} */}
+            
 
               {rubros !== '' ? (
                 <select
@@ -211,3 +188,31 @@ const AgregarGastos = () => {
 
 
 export default AgregarGastos;
+
+  {/* {rubros !== '' ? (
+                <select
+                  name="slc-rubros"
+                  className="slc-rubros"
+                  onChange={(e) => {
+                    const RubroSeleccionado = e.target.value
+                    setRubros(RubroSeleccionado);
+
+                  }}
+                >
+                  <option key={0} value={0}>
+                    Seleccione un rubro
+                  </option>
+
+                  {rubros && rubros.map((item, index) => (
+                    <option key={item.id} value={item.id}>
+                      {item.nombre}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <select name="slc-rubros" className="slc-rubros">
+                  <option key={-1} value={0}>
+                    {'No hay rubros'}
+                  </option>
+                </select>
+              )} */}

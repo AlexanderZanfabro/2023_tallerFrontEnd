@@ -12,6 +12,12 @@ import NavBar from './commons/Navbar/index';
 // fin agregado noob
 
 let App = () => {
+
+  const infoIdDepartamento = info => {
+    let infoGenerica = {}
+  }
+
+
   return (
     <Provider store={store}>
      
@@ -20,7 +26,7 @@ let App = () => {
         <Routes>
 
           <Route path='/' element={<Login />} />
-          <Route path='Registro' element={<Registro />} />
+          <Route path='Registro' element={<Registro infoIdDepartamento={infoIdDepartamento}/>} />
           <Route path='Dashboard' element={<Dashboard />} />
 
         </Routes>

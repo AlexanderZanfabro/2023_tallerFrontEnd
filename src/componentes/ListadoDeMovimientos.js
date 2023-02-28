@@ -20,7 +20,9 @@ const ListadoDeMovimientos = () => {
 
     const listarLosMovimientos = e => {
 
-        fetch("https://dwallet.develotion.com/movimientos.php?idUsuario=3", {
+        const datoIdUsuario = localStorage.getItem('userId')
+
+        fetch("https://dwallet.develotion.com/movimientos.php?idUsuario=3"/*  + datoIdUsuario */, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

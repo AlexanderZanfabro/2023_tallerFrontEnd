@@ -18,4 +18,4 @@ export const datosSlice = createSlice({
 });
 
 export const {usarIdDepartamento} = datosSlice.actions;
-export default datosSlice.reducer; */
+export default datosSlice.reducer;  */

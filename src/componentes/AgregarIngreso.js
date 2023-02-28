@@ -28,12 +28,14 @@ const AgregarIngreso = () => {
     /* useEffect */
     useEffect(() => {
         obtenerRubros();
+       
     }, []);
 
 
 
     /* fetch para obtener rubros */
     const obtenerRubros = () => {
+
         fetch("https://dwallet.develotion.com/rubros.php", {
             method: 'GET',
             headers: {
@@ -56,8 +58,11 @@ const AgregarIngreso = () => {
 
     const registrarIngreso = e => {
 
+       /*  let idUsuarioLocalStorage2 = localStorage.getItem("userId"); */
+
+
         const data = {
-            idUsuario: idUsuarioLocalStorage,
+            idUsuario: idUsuarioLocalStorage,/* que pasa con localStorage ??? */
             concepto: descripcionIngreso,
             categoria: idRubro,
             total: totalIngreso,

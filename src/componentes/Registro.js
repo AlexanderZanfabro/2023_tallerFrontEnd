@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, ref, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSecondSelect } from "./Registro";
+import { usarIdDepartamento } from '../features/datosSlice';
 
 
-
-const Registro = () => {
+const Registro = ({infoIdDepartamento}) => {
 
 
 
@@ -14,8 +14,8 @@ const Registro = () => {
   let navigate = useNavigate();
 
   /*  */
-  const dispatch = useDispatch();
-  const datoIdDep = useSelector(state => state.datosId.datosId)
+ /*  const dispatch = useDispatch(); */                                 /* PARA USAR STORE */
+ /*  const datoIdDep = useSelector(state => state.datosId.datosId) */  /* PARA USAR STORE */
 
 
 
@@ -40,9 +40,16 @@ const Registro = () => {
   /* useEffect */
   useEffect(() => {
     obtenerDepartamentos();
+   /*  dispatch() */            /* PARA USAR STORE */
   }, []);
 
 
+/* -------------------------------- */
+
+infoIdDepartamento();
+
+
+/* --------------------------------- */
 
   /* usar un fetch para traer los departamentos y despues pasar el seleccionado a otro para buscar la ciudad */
   const obtenerDepartamentos = () => {
@@ -56,7 +63,7 @@ const Registro = () => {
       .then(datosDepartamentos => {
         console.log(datosDepartamentos.departamentos);
         setDepartamentos(datosDepartamentos.departamentos);
-       /*  dispatch(usarIdDepartamento(datosDepartamentos.departamentos.id)) */
+       /*  dispatch(usarIdDepartamento(datosDepartamentos.departamentos.id)) */   /* PARA USAR STORE */
       });
 
 
@@ -65,12 +72,12 @@ const Registro = () => {
   //#region (fetch ciudades)
 
   /* fetch de obtener ciudades */
-  const obtenerCiudades = (datoIdDep) => {
-    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento=${idDepartamentos}", {
+  const obtenerCiudades = (/* datoIdDep */) => {                                                  /* PARA USAR STORE */
+    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento="  /*+ datoIdDep */, {    /* PARA USAR STORE */
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }
+      }                                                     /* LE INGRESO ID DE CIUDAD A MANO --> NO RESOLVI EL PASAJE DE ID DE DEPARTAMENTO */
     })
       .then(r => r.json())
       .then(datosCiudades => {
@@ -181,8 +188,8 @@ const Registro = () => {
                 name="slc-departamentos"
                 className="slc-dep"
                 onChange={(e) => {
-                  const idDepartamentoSeleccionado = e.target.value
-                  setidDepartamentos(idDepartamentoSeleccionado);
+                  const DepartamentoSeleccionado = e.target.value/* del value del option */
+                  setidDepartamentos(DepartamentoSeleccionado);
                   /*  handleFirstSelectChange */
                 }}
               >
