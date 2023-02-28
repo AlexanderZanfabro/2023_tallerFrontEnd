@@ -14,15 +14,11 @@ const AgregarGastos = () => {
   const [idRubro, setIdRubro] = useState("");
   const [rubros, setRubros] = useState("");
   const [medioDePago, setMedioDePago] = useState();
-  
+
   /* otros */
   let idUsuarioLocalStorage = localStorage.getItem("userId");  /* QUE PASA CON EL LOCALSTORAGE ? AL CREAR EL OBJETO DATA PARA HACER INGRESOS */
-
-  /* la funcion filter daba error -> decia que no era una funcion ??? */
- /*  const rubrosFiltrados = rubros.filter(valor => valor.id < 7); */
- /*  const algo = rubros.filter(function(r){
-    return r.id < 7;
-  }) */
+  console.log('idUsuarioLocalStorage obtenido con exito', idUsuarioLocalStorage);
+  
 
 
   /* useEffect */
@@ -34,7 +30,7 @@ const AgregarGastos = () => {
 
   /* fetch para obtener rubros */
   const obtenerRubros = () => {
-  
+
     fetch("https://dwallet.develotion.com/rubros.php", {
       method: 'GET',
       headers: {
@@ -56,7 +52,7 @@ const AgregarGastos = () => {
 
 
   const ingresarGasto = e => {
-   
+
     const data = {
       idUsuario: idUsuarioLocalStorage,
       concepto: descripcionGasto,
@@ -65,6 +61,7 @@ const AgregarGastos = () => {
       medio: medioDePago,
       fecha: datoFecha,
     }
+    console.log('idUsuario de data ingreso de gasto', data);
     /*  const data3 = {idUsuarioLocalStorage,descripcionGasto,idRubro,80,fecha} */
 
     fetch('https://dwallet.develotion.com/movimientos.php', {
@@ -86,27 +83,27 @@ const AgregarGastos = () => {
       })
   }
 
- 
-  
+
+
 
   /* return del componente */
 
   return (
     <div>
 
-<h1>Agregar gastos</h1>
+      <h1>Agregar gastos</h1>
       <section className="registrar flex centrado">
         <div>
-         
+
           <form action="">
             <fieldset className="flex">
-                
+
               <input type="text" placeholder="Descripción del gasto" ref={descripcionGasto} />
               <input type="number" placeholder="Ingresar gasto" ref={totalGasto} />
               <input type="texto" placeholder="Ingresar fecha como texto (YYY-MM-dd)" ref={datoFecha} />
 
               {/* select de rubros */}
-            
+
 
               {rubros !== '' ? (
                 <select
@@ -121,10 +118,10 @@ const AgregarGastos = () => {
                     Seleccione un rubro
                   </option>
 
-               
-                  { rubros && rubros.filter(r => r.id < 7).map((item, index) => (
 
-                   
+                  {rubros && rubros.filter(r => r.id < 7).map((item, index) => (
+
+
                     <option key={item.id} value={item.id}>
                       {item.nombre}
                     </option>
@@ -189,7 +186,7 @@ const AgregarGastos = () => {
 
 export default AgregarGastos;
 
-  {/* {rubros !== '' ? (
+{/* {rubros !== '' ? (
                 <select
                   name="slc-rubros"
                   className="slc-rubros"

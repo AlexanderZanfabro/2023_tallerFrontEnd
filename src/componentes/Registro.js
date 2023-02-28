@@ -13,10 +13,10 @@ const Registro = ({infoIdDepartamento}) => {
   /* para habilitar la navegacion */
   let navigate = useNavigate();
 
-  /*  */
- /*  const dispatch = useDispatch(); */                                 /* PARA USAR STORE */
- /*  const datoIdDep = useSelector(state => state.datosId.datosId) */  /* PARA USAR STORE */
-
+  /* desde el store de Redux */
+  const dispatch = useDispatch();                                 /* PARA USAR STORE */
+  const datoIdDep = useSelector(state => state.datosId.datosId)  /* PARA USAR STORE */
+  console.log('en la const de useSelector',datoIdDep);
 
 
   /* useState */
@@ -40,7 +40,7 @@ const Registro = ({infoIdDepartamento}) => {
   /* useEffect */
   useEffect(() => {
     obtenerDepartamentos();
-   /*  dispatch() */            /* PARA USAR STORE */
+    obtenerCiudades();
   }, []);
 
 
@@ -63,17 +63,17 @@ infoIdDepartamento();
       .then(datosDepartamentos => {
         console.log(datosDepartamentos.departamentos);
         setDepartamentos(datosDepartamentos.departamentos);
-       /*  dispatch(usarIdDepartamento(datosDepartamentos.departamentos.id)) */   /* PARA USAR STORE */
+       /*  dispatch(usarIdDepartamento(datosDepartamentos.departamentos.id)) */   /* PARA USAR STORE */ /* prueba de dispatch en el select de departamento y no aca */
       });
 
 
   }
 
-  //#region (fetch ciudades)
+
 
   /* fetch de obtener ciudades */
-  const obtenerCiudades = (/* datoIdDep */) => {                                                  /* PARA USAR STORE */
-    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento="  /*+ datoIdDep */, {    /* PARA USAR STORE */
+  const obtenerCiudades = (datoIdDep) => {                                                  /* PARA USAR STORE */
+    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento=${datoIdDep}"/* + datoIdDep */, {    /* PARA USAR STORE */
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -81,13 +81,13 @@ infoIdDepartamento();
     })
       .then(r => r.json())
       .then(datosCiudades => {
-        console.log(datosCiudades.ciudades);
+        console.log('datos de ciudades', datosCiudades.ciudades);
         setCiudades(datosCiudades.ciudades);
 
       });
 
   }
-  //#endregion
+  
 
   /* 
   const handleFirstSelectChange = () => { */
@@ -132,7 +132,7 @@ infoIdDepartamento();
 
 
     const datos = { usuario, password, idDepartamentos, idCiudad };
-    console.log(datos);
+    console.log('datos para registrar usuario',datos);
 
 
     fetch("https://dwallet.develotion.com/usuarios.php", {
@@ -190,6 +190,8 @@ infoIdDepartamento();
                 onChange={(e) => {
                   const DepartamentoSeleccionado = e.target.value/* del value del option */
                   setidDepartamentos(DepartamentoSeleccionado);
+
+                  dispatch(usarIdDepartamento(DepartamentoSeleccionado))           /* PARA USAR STORE probar este DISPATCH */
                   /*  handleFirstSelectChange */
                 }}
               >
