@@ -13,9 +13,6 @@ import NavBar from './commons/Navbar/index';
 
 let App = () => {
 
-  const infoIdDepartamento = info => {
-    let infoGenerica = {}
-  }
 
 
   return (
@@ -26,7 +23,7 @@ let App = () => {
         <Routes>
 
           <Route path='/' element={<Login />} />
-          <Route path='Registro' element={<Registro infoIdDepartamento={infoIdDepartamento}/>} />
+          <Route path='Registro' element={<Registro />} />
           <Route path='Dashboard' element={<Dashboard />} />
 
         </Routes>

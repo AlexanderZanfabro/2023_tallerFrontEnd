@@ -6,7 +6,7 @@ import { updateSecondSelect } from "./Registro";
 import { usarIdDepartamento } from '../features/datosSlice';
 
 
-const Registro = ({infoIdDepartamento}) => {
+const Registro = () => {
 
 
 
@@ -24,7 +24,7 @@ const Registro = ({infoIdDepartamento}) => {
   const [departamentos, setDepartamentos] = useState("");
   const [idDepartamentos, setidDepartamentos] = useState(0);
   /*  */
-  const [ciudades, setCiudades] = useState([]);
+  const [ciudades, setCiudades] = useState('');
   const [idCiudad, setIdCiudad] = useState(0);
   console.log('del state de ciudades',ciudades);
   /*  */
@@ -45,10 +45,6 @@ const Registro = ({infoIdDepartamento}) => {
    
   }, []);
 
-
-/* -------------------------------- */
-
-infoIdDepartamento();
 
 
 /* --------------------------------- */
@@ -72,14 +68,16 @@ infoIdDepartamento();
   }
 
 
-
+ 
   /* fetch de obtener ciudades */
-  const obtenerCiudades = (datoIdDep) => {                                                  /* PARA USAR STORE */
-    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento="+ datoIdDep, {    /* PARA USAR STORE */
+/* PARA USAR STORE   /    + datoIdDep  / ${datoIdDep}  LE INGRESO ID DE CIUDAD A MANO ( ej: San Jose -> 3204)--> DINAMICAMENTE RESPONDE CON UN ARRAY DE CIUDADES VACIO*/
+
+   const obtenerCiudades = (datoIdDep) => {                                                 
+    fetch(`https://dwallet.develotion.com/ciudades.php?idDepartamento=${datoIdDep}`, {   
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }                                                  
+      }                                                     
     })
       .then(r => r.json())
       .then(datosCiudades => {
@@ -88,9 +86,37 @@ infoIdDepartamento();
 
       });
 
-  }
+  } 
   
 
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* sujerencia de fetch pero el resultado es el mismo */
+
+  /*  useEffect((datoIdDep) => {
+    fetch(`https://dwallet.develotion.com/ciudades.php?idDepartamento=${datoIdDep}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }  
+    })
+       .then((respose) => {
+            console.log(respose);
+            if(respose.status === 200){
+              return respose.json();
+            }else{
+              alert('no datos');
+            }
+       })
+        .then((resposeJson) => {
+              setCiudades(resposeJson.ciudades);
+              console.log(resposeJson.ciudades);
+        })
+
+
+   }, [datoIdDep]) */
+
+/* ---------------------------------------------------------------------------------------------------------------- */
   /* 
   const handleFirstSelectChange = () => { */
 
@@ -196,7 +222,7 @@ infoIdDepartamento();
                   dispatch(usarIdDepartamento(DepartamentoSeleccionado))           /* PARA USAR STORE probar este DISPATCH */
                   /*  handleFirstSelectChange */
 
-                  obtenerCiudades();
+                  obtenerCiudades();  
                 }}
               >
                 <option key={0} value={0}>

@@ -7,7 +7,7 @@ const ListadoDeMovimientos = () => {
 
     /* useEstate */
     const [movimientos, setMovimientos] = useState([]);
-    /*  console.log('los mov que',movimientos); */
+     console.log('movimientos ingresados',movimientos);
 
 
     /* useEffect */
@@ -22,7 +22,7 @@ const ListadoDeMovimientos = () => {
 
         const datoIdUsuario = localStorage.getItem('userId')
 
-        fetch("https://dwallet.develotion.com/movimientos.php?idUsuario=3"/*  + datoIdUsuario */, {
+        fetch(`https://dwallet.develotion.com/movimientos.php?idUsuario=${datoIdUsuario}`/*  + datoIdUsuario   /  idUsuario = 3 muestra movimientos genericos */, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const ListadoDeMovimientos = () => {
             <section className="registrar flex centrado">
                 <div>
 
-                   <Movimiento movimientos={movimientos}/>
+                    <Movimiento movimientos={movimientos} />
 
 
                     {/*  {movimientos  && movimientos.map((item) => (
@@ -56,7 +56,7 @@ const ListadoDeMovimientos = () => {
                      ))} */}
 
                     <ol>
-                      {/*   {movimientos ? (
+                        {/*   {movimientos ? (
 
                             movimientos.map((item, index) => (
                                 <li id='li' key={item.id}>{item.conepto}</li>)
@@ -70,7 +70,7 @@ const ListadoDeMovimientos = () => {
                             )} */}
                     </ol>
 
-                  {/*   <table className="tablaMovimientos">
+                    {/*   <table className="tablaMovimientos">
                         <thead>
                             <tr>
 
@@ -102,10 +102,14 @@ const ListadoDeMovimientos = () => {
                         )}
                     </table> */}
 
+
+
                 </div>
             </section>
+
         </div>
     )
 }
 
 export default ListadoDeMovimientos
+
