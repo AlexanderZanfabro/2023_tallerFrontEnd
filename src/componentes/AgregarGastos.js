@@ -98,8 +98,8 @@ const AgregarGastos = () => {
           <form action="">
             <fieldset className="flex">
 
-              <input type="text" placeholder="Descripción del gasto" ref={descripcionGasto} />
-              <input type="number" placeholder="Ingresar gasto" ref={totalGasto} />
+              <input type="text" placeholder="Descripción del gasto" ref={descripcionGasto}  maxLength='100'/>
+              <input type="number" placeholder="Ingresar gasto" ref={totalGasto} maxLength='10'/>
               <input type="texto" placeholder="Ingresar fecha como texto (YYY-MM-dd)" ref={datoFecha} />
 
               {/* select de rubros */}

@@ -13,6 +13,7 @@ const Registro = ({infoIdDepartamento}) => {
   /* para habilitar la navegacion */
   let navigate = useNavigate();
 
+
   /* desde el store de Redux */
   const dispatch = useDispatch();                                 /* PARA USAR STORE */
   const datoIdDep = useSelector(state => state.datosId.datosId)  /* PARA USAR STORE */
@@ -23,8 +24,9 @@ const Registro = ({infoIdDepartamento}) => {
   const [departamentos, setDepartamentos] = useState("");
   const [idDepartamentos, setidDepartamentos] = useState(0);
   /*  */
-  const [ciudades, setCiudades] = useState("");
+  const [ciudades, setCiudades] = useState([]);
   const [idCiudad, setIdCiudad] = useState(0);
+  console.log('del state de ciudades',ciudades);
   /*  */
 
   const [error, setError] = useState(false);
@@ -40,7 +42,7 @@ const Registro = ({infoIdDepartamento}) => {
   /* useEffect */
   useEffect(() => {
     obtenerDepartamentos();
-    obtenerCiudades();
+   
   }, []);
 
 
@@ -61,7 +63,7 @@ infoIdDepartamento();
     })
       .then(r => r.json())
       .then(datosDepartamentos => {
-        console.log(datosDepartamentos.departamentos);
+        console.log('datos de departamentos',datosDepartamentos.departamentos);
         setDepartamentos(datosDepartamentos.departamentos);
        /*  dispatch(usarIdDepartamento(datosDepartamentos.departamentos.id)) */   /* PARA USAR STORE */ /* prueba de dispatch en el select de departamento y no aca */
       });
@@ -73,15 +75,15 @@ infoIdDepartamento();
 
   /* fetch de obtener ciudades */
   const obtenerCiudades = (datoIdDep) => {                                                  /* PARA USAR STORE */
-    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento=${datoIdDep}"/* + datoIdDep */, {    /* PARA USAR STORE */
+    fetch("https://dwallet.develotion.com/ciudades.php?idDepartamento="+ datoIdDep, {    /* PARA USAR STORE */
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }                                                     /* LE INGRESO ID DE CIUDAD A MANO --> NO RESOLVI EL PASAJE DE ID DE DEPARTAMENTO */
+      }                                                  
     })
       .then(r => r.json())
       .then(datosCiudades => {
-        console.log('datos de ciudades', datosCiudades.ciudades);
+        console.log('datos de ciudades', datosCiudades);
         setCiudades(datosCiudades.ciudades);
 
       });
@@ -193,6 +195,8 @@ infoIdDepartamento();
 
                   dispatch(usarIdDepartamento(DepartamentoSeleccionado))           /* PARA USAR STORE probar este DISPATCH */
                   /*  handleFirstSelectChange */
+
+                  obtenerCiudades();
                 }}
               >
                 <option key={0} value={0}>
